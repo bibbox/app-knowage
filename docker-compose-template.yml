@@ -20,6 +20,7 @@ services:
       - §§INSTANCE-knowage-data
     environment:
       - WAIT_MYSQL=true
+      - PUBLIC_ADDRESS=127.0.0.1
     ports:
       - "§§PORT:8080"
 
