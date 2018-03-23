@@ -1,0 +1,43 @@
+version: '2'
+
+networks:
+    bibbox-default-network:
+      external: true
+
+services:
+  §§INSTANCE-knowage:
+
+    image: knowagelabs/knowage-server-docker:develop
+    container_name:  §§INSTANCE-knowage
+    restart: unless-stopped
+    networks:
+      - bibbox-default-network
+    links:
+      - §§INSTANCE-knowage-db:db
+    depends_on:
+      - §§INSTANCE-knowage-db
+      - §§INSTANCE-knowage-data
+    volumes_from:
+      - §§INSTANCE-seeddms-data
+    environment:
+      - WAIT_MYSQL=true
+    ports:
+      - "§§PORT:8080"
+
+  §§INSTANCE-knowage-db:
+    image: mysql:5.5
+    environment:
+        - MYSQL_USER=knowageuser
+        - MYSQL_PASSWORD=knowagepassword
+        - MYSQL_DATABASE=knowagedb
+        - MYSQL_ROOT_PASSWORD=knowagerootpassword
+    volumes_from:
+      - §§INSTANCE-knowage-data
+    depends_on:
+      - §§INSTANCE-knowage-data
+
+  §§INSTANCE-knowage-data:
+    image: busybox
+    container_name: §§INSTANCE-knowage-data
+    volumes:
+      - ./var/lib/mysql:/var/lib/mysql

@@ -1,0 +1,4 @@
+{
+  runningcontainers:["§§INSTANCE-knowage", "§§INSTANCE-knowage-db"],
+  supportcontainers:["§§INSTANCE-knowage-data"]
+}

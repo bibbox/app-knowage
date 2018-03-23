@@ -1,0 +1,11 @@
+{
+	"name": "Knowage",
+	"short_name": "Knowage",
+	"version": "latest",
+	"description": "Open Source Business Analytics",
+    "short_description": "Open Source Business Analytics",
+	"catalogue_url": "",
+	"application_url": "https://www.knowage-suite.com",
+	"tags": ["Database", "BI"],
+	"application_documentation_url": "https://www.knowage-suite.com"
+}
