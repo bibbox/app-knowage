@@ -26,6 +26,7 @@ services:
 
   §§INSTANCE-knowage-db:
     image: mysql:5.5
+    container_name:  §§INSTANCE-knowage-db
     environment:
         - MYSQL_USER=knowageuser
         - MYSQL_PASSWORD=knowagepassword
