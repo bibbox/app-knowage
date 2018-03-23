@@ -6,8 +6,7 @@ networks:
 
 services:
   §§INSTANCE-knowage:
-
-    image: knowagelabs/knowage-server-docker:develop
+    image: knowagelabs/knowage-server-docker:latest
     container_name:  §§INSTANCE-knowage
     restart: unless-stopped
     networks:
